@@ -1,36 +1,135 @@
 /*
 Theme Name: PB simple theme
 Theme URI: http://pedrobachiega.com
-Description: Simple theme
+Description: Simple theme to pedrobachiega site
 Author: Pedro Bachiega
 Version: 0.1
 */
 
-/* Structure */
-html, body {
-	text-align:center;
-}
-#wrapper {
-	width:80%;
-	margin:0 auto;
-	text-align:left;
-	border-left:1px dashed #dddddd;
-	border-right:1px dashed #dddddd;
-	color:#666;
-}
+/* Typography and colors */
+/* 
+ Color palette
+ #C9D1D3
+ #F7F7F7
+ #9DD3DF
+ #3B3737
+ #991818
 
-#wrapper > header, #wrapper > section, #wrapper > footer { padding:5px; }
-#wrapper > header, #wrapper > footer { clear:both; }
-#wrapper > header { border-bottom:1px dashed #dddddd; }
-#wrapper > footer { border-top:1px dashed #dddddd; }
-#wrapper > #content {
-	width:63%;
-	float:left;
+ 1em == 10px
+*/
+html, body {
+  font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size:100%;
+  line-height:115%;
+	background:#F7F7F7;
+	color:#3B3737;
 }
-#wrapper > #sidebar {
-	width:32%;
-	float:right;
-}
+h1, h2, h3, h4 { margin:12px 0px; font-weight:bold; }
+h1 { font-size:1.7em; line-height:150%; }
+h2 { font-size:1.7em; line-height:150%; }
+h3 { font-size:1.2em; line-height:130%; }
+h4 { font-size:1.1em; line-height:120%; }
+p { margin:12px 0px; font-size:1em; }
+#wrapper { background:#FFF; }
+.entry h1, a { color:#991818; }
+
+/* Structure */
+html, body, #wrapper, #wrapper > header, #wrapper > section, 
+				#wrapper > footer, .entry { position:relative; }
+html, body { text-align:center; margin:0; padding:0; }
+#wrapper { width:80%; margin:0 auto; text-align:left; }
+#wrapper > header, #wrapper > footer { clear:both; padding:10px 5px; }
+#wrapper > #content { width:72%; float:left; }
+#wrapper > #sidebar { width:25%; float:right; }
+.menu-horizontal li { display:inline; }
+
+#content, #sidebar {xborder:0.1em solid red;}
 
 /* Layout */
-hr { border-style:dashed; border-color:#dddddd; }
+#wrapper > header { padding:30px 10px 10px 10px; }
+#wrapper > header #blog-title { font-size:1.7em; line-height:150%; font-weight:bold; }
+#wrapper > header > nav { 
+	position:absolute; top:0; left:0; display:block; width:100%; 
+	background:#3B3737;
+	text-transform:uppercase;
+	text-align:center;
+}
+#wrapper > header > nav li { margin:0px 4px; }
+#wrapper > header > nav li a {
+	display:inline-block;
+	padding:5px;
+	margin:1px;
+	text-decoration:none;
+	font-size:0.7em;
+	color:#FFF;
+}
+#wrapper > header > nav li a:hover {
+	background:#991818;
+	color:#FFF;
+}
+
+.entry {
+	margin:10px 0 25px 0;
+	padding:5px 5px 5px 70px;
+}
+.entry header time{
+	position:absolute;
+	top:5px;
+	left:16px;
+	text-align:center;
+	font-size:0.8em;
+	line-height:130%;
+	width:5%;
+	border:1px dotted #C9D1D3;
+	color:#C9D1D3
+}
+.entry footer{
+	margin:20px 0 0 0;
+}
+.entry footer span{
+	display:block;
+	font-size:0.75em;
+	line-height:135%;
+}
+.home .entry h2 a, .single .entry h1 span, .page .entry h1 span { border-bottom:1px dashed #991818; }
+.home .entry h2 a:hover { border-bottom:1px dotted #991818; }
+.entry .entry-content{
+	line-height:130%;
+}
+
+#entry-comments > h3 { border-bottom:1px dashed #C9D1D3; margin-right:50px; }
+#entry-comments > ol { margin:10px 20px; font-size:0.9em; }
+.comment, .pingback, .trackback { margin:0 30px 20px 0; }
+.comment .comment-meta, .pingback .comment-meta, .trackback .comment-meta { font-size:0.7em; }
+.comment .reply, .pingback .reply, .trackback .reply { text-align:right; }
+
+#comment-form { font-size:0.9em;}
+#comment-form label { display:block;}
+#comment-form p small { display:block;}
+
+#sidebar { padding:15px 0; }
+.sidebar-widget {
+	font-size:0.9em;
+}
+
+#content > nav { text-align:center; }
+
+#wrapper > footer #footer-info {
+	text-align:center;
+	font-size:0.8em;
+}
+
+
+/* Classes and common components */
+hr { border-style:dashed; border-color:#C9D1D3; margin:7px 0; }
+a { text-decoration:none; border-bottom:1px dashed transparent; }
+a:hover { border-bottom:1px dashed #991818; }
+blockquote{
+	margin:2px 0 2px 15px;
+	padding:2px 20px;
+	font-size:0.9em;
+	font-style:italic;
+	background:#eee;
+}
+small { font-size:0.7em; }
+

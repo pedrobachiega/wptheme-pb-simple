@@ -5,7 +5,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
 <title><?php wp_title( '' ); ?> <?php bloginfo( 'name' ); ?></title>
-<!-- <link rel="stylesheet" type="text/css" media="screen" href="http://meyerweb.com/eric/tools/css/reset/reset.css" /> -->
+<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory'); ?>/reset.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_directory'); ?>/wp-defaults.css" />
 <script type="text/javascript" src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -19,10 +19,17 @@
 <div id="wrapper">
 
   <header>
-    <h1>pedrobachiega.com</h1>
+    <?php if ( is_home() ) { ?>
+      <h1 id="blog-title">pedro bachiega's blog</h1>
+    <?php } else { ?>
+      <p id="blog-title">pedro bachiega's blog</p>
+    <?php } ?>
+    <p id="blog-desc">web, wordpress, mobile, development, ruby on rails, and other stuff</p>
+
     <nav>
-      <ul>
-        <?php wp_list_pages('title_li=&depth=0&sort_column=menu_order'); ?>
+      <ul class="menu-horizontal">
+        <?php wp_list_pages('title_li=&depth=1&sort_column=menu_order'); ?>
       </ul>
     </nav>
+    <hr />
   </header>

@@ -60,11 +60,11 @@ if ( !function_exists( 'exclude_pages_from_search' ) ) {
 // changes title to remove Protected and Private strings
 if ( !function_exists( 'change_title' ) ) {
 	function change_title($title) {
-	   $title = attribute_escape($title);
-	   $keywords = array( '#Protected:#', '#Private:#' );
-	   $new_ones = array( '', '' );
-	   $title = preg_replace($keywords, $new_ones, $title);
-	   return $title;
+	  $title = attribute_escape($title);
+	  $keywords = array( '#Protected:#', '#Private:#' );
+	  $new_ones = array( '', '' );
+	  $title = preg_replace($keywords, $new_ones, $title);
+	  return $title;
 	}
 }
 //add_filter('the_title', 'change_title');
@@ -72,22 +72,22 @@ if ( !function_exists( 'change_title' ) ) {
 // functions to see most viewed posts
 if ( !function_exists( 'getPostViews' ) ) {
 	function getPostViews($postID){
-	    $count_key = 'post_views_count';
-	    $count = get_post_meta($postID, $count_key, true);
-	    if($count==''){
-	        delete_post_meta($postID, $count_key);
-	        add_post_meta($postID, $count_key, '0');
-	        return "0";
-	    }
-	    return $count;
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+      delete_post_meta($postID, $count_key);
+      add_post_meta($postID, $count_key, '0');
+      return "0";
+    }
+    return $count;
 	}
 }
 if ( !function_exists( 'incrementPostViews' ) ) {
 	function incrementPostViews($postID) {
 		if ( !is_user_logged_in() ) {
-		    $count_key = 'post_views_count';
-	    	$count = get_post_meta($postID, $count_key, true);
-	    	if($count==''){
+	    $count_key = 'post_views_count';
+    	$count = get_post_meta($postID, $count_key, true);
+    	if($count==''){
 				$count = 0;
 				delete_post_meta($postID, $count_key);
 				add_post_meta($postID, $count_key, '0');

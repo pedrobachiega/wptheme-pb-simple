@@ -11,15 +11,6 @@
 				<?php wp_get_archives( 'type=monthly' ); ?>
 			</ul>
 		</div>
-
-		<div class="sidebar-widget" id="sidebar-meta">
-			<h3 class="widget-title"><?php _e( 'Meta', 'pbsimpletheme' ); ?></h3>
-			<ul>
-				<?php wp_register(); ?>
-				<li><?php wp_loginout(); ?></li>
-				<?php wp_meta(); ?>
-			</ul>
-		</div>
 		
 	<?php endif; ?>
   </section>
